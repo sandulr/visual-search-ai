@@ -1,4 +1,4 @@
-// components/TechStack.tsx
+
 "use client";
 import { Code, Cpu, Cloud } from "lucide-react";
 import TechCard from "./TechCard";

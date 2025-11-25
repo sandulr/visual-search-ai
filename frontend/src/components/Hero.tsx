@@ -1,4 +1,4 @@
-// components/Hero.tsx
+
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -43,7 +43,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-6 py-24 lg:py-32 flex flex-col-reverse lg:flex-row items-center gap-10">
-        {/* LEFT: text */}
+        
         <motion.div
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -76,7 +76,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* RIGHT: scanner mock card */}
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

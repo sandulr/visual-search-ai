@@ -24,7 +24,7 @@ export default function AnimatedHeader({ onLineComplete }) {
             onComplete: () => setTypingComplete(true)
             
           }}
-          // cursor ON / OFF toggle
+
           className={`overflow-hidden whitespace-nowrap inline-block pr-1
             ${typingComplete ? "border-r-0" : "border-r-2 border-blue-400"}
           `}

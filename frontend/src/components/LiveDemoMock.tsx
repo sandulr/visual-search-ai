@@ -1,9 +1,9 @@
-// components/LiveDemoMock.tsx
+
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const demoImages = Array.from({ length: 8 }).map((_, i) => `/collection/${i + 1}.jpg`); // replace with your demo images
+const demoImages = Array.from({ length: 8 }).map((_, i) => `/collection/${i + 1}.jpg`);
 
 export default function LiveDemoMock() {
   return (
@@ -19,7 +19,7 @@ export default function LiveDemoMock() {
       <motion.div className="mt-4 grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {demoImages.map((s, i) => (
           <motion.div key={i} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: i * 0.06 }} className="rounded-md overflow-hidden bg-[rgba(255,255,255,0.02)] h-28">
-            {/* Use real images in /public/demo/ or replace src */}
+
             <img src={s} alt={`demo-${i}`} className="w-full h-full object-cover cursor-pointer"/>
           </motion.div>
         ))}

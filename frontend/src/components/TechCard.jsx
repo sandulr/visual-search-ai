@@ -13,7 +13,7 @@ export default function TechCard({ name }) {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -8; // tilt limit
+    const rotateX = ((y - centerY) / centerY) * -8;
     const rotateY = ((x - centerX) / centerX) * 8;
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
@@ -31,12 +31,11 @@ export default function TechCard({ name }) {
       ref={cardRef}
       style={{ transformStyle: "preserve-3d" }}
     >
-      {/* Animated neon border */}
+
       <div
         className="absolute inset-0 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-flow"
       />
 
-      {/* Glossy glare */}
       <div
         className="
           absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40
@@ -45,11 +44,10 @@ export default function TechCard({ name }) {
           transition-opacity duration-300
         "
         style={{
-          transform: "translateZ(30px)", // sits above content
+          transform: "translateZ(30px)",
         }}
       />
 
-      {/* Card content */}
       <div
         className="relative z-10 bg-[#0c0c0f] rounded-xl p-6 flex items-center justify-center"
         style={{ transform: "translateZ(40px)" }}
