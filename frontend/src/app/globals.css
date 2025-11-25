@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+
+:root {
+  color-scheme: dark;
+  --ai-purple: #7c3aed;
+  --ai-violet: #6d28d9;
+  --ai-cyan: #06b6d4;
+}
+
+/*:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+/*
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+*/
+
+html, body {
+  @apply bg-[#040415] text-slate-200 antialiased;
+}
+
+
+@keyframes imagePopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+.image-appear {
+  animation: imagePopIn 1s ease-out forwards;
+}
+
+.hovani:hover {
+  transform: scale(1.05);
+  transition: transform 3s ease-in-out;
+
+}
+
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 4s linear infinite;
+}
+
+
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+
+
+/* subtle soft glow */
+.shadow-ai { box-shadow: 0 8px 30px rgba(124,58,237,0.12); }
+
+
+
+
+/* scan animation for scanner mock */
+@keyframes scan {
+  0% { transform: translateY(-120%); opacity: 0.1; }
+  50% { opacity: 0.35; }
+  100% { transform: translateY(120%); opacity: 0.0; }
+}
+.scan-line {
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  animation: scan 24s linear infinite;
+}
+
+/* slow spin helpers used in hero shapes */
+@keyframes spin-slow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+.animate-spin-slow { animation: spin-slow 2s linear infinite; }
+
+/* typed text caret (if needed elsewhere) */
+.caret {
+  border-right: 2px solid rgba(96,165,250,0.9);
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret {
+  50% { border-color: transparent; }
+  100% { border-color: rgba(96,165,250,0.9); }
+}
+
+
+.neon-blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 0, 153, 0.45), 
+    rgba(0, 204, 255, 0.28),
+    rgba(0, 0, 0, 0)
+  );
+  filter: blur(120px);
+  transform: translate(-50%, -50%);
+  animation: blobFloat 12s ease-in-out infinite alternate;
+  z-index: 0; /* behind your hero section */
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(120px);
+  }
+  50% {
+    transform: translate(-45%, -48%) scale(1.15);
+    filter: blur(140px);
+  }
+  100% {
+    transform: translate(-55%, -52%) scale(0.95);
+    filter: blur(110px);
+  }
+}
+
+
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border-flow {
+  background-size: 300% 300%;
+  animation: borderFlow 4s linear infinite;
+  cursor: pointer;
+}
+
+

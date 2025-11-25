@@ -1,0 +1,12 @@
+
+
+# --- BACKEND (Python) ---
+/backend/__pycache__/
+/backend/*.pyc
+/backend/.venv/
+/backend/env/
+/backend/.pytest_cache/
+/backend/.mypy_cache/
+
+# General
+.DS_Store
